@@ -1,2 +1,2 @@
-# kubernates-example-app
-🚢 Exemplo de aplicação utilizando Kubernates
+# kubernetes-example-app
+🚢 Exemplo de aplicação utilizando Kubernetes
