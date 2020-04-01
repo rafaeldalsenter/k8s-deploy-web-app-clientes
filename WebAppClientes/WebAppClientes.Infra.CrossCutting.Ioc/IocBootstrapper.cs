@@ -2,7 +2,7 @@
 using WebAppClientes.Repositories;
 using WebAppClientes.Services;
 
-namespace WebAppClientes.CrossCutting.Ioc
+namespace WebAppClientes.Infra.CrossCutting.Ioc
 {
     public class IocBootstrapper
     {
