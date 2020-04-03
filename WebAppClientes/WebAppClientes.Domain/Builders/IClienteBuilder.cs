@@ -4,6 +4,8 @@
     {
         Cliente Build();
 
+        IClienteBuilder WithId(int id);
+
         IClienteBuilder WithNome(string nome);
 
         IClienteBuilder WithCpf(string cpf);

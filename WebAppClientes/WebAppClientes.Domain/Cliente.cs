@@ -2,8 +2,9 @@
 {
     public class Cliente : BaseDomain
     {
-        public Cliente(string nome, string cpf, string rua, string bairro, string cidade, string obs)
+        public Cliente(int id, string nome, string cpf, string rua, string bairro, string cidade, string obs)
         {
+            SetId(id);
             SetNome(nome);
             SetCpf(cpf);
             SetRua(rua);
@@ -11,6 +12,8 @@
             SetCidade(cidade);
             SetObservacoes(obs);
         }
+
+        public void SetId(int id) => Id = id;
 
         public void SetNome(string nome) => Nome = nome;
 
@@ -24,6 +27,7 @@
 
         public void SetObservacoes(string obs) => Observacoes = obs;
 
+        public int Id { get; private set; }
         public string Nome { get; private set; }
         public string Cpf { get; private set; }
         public string Rua { get; private set; }
