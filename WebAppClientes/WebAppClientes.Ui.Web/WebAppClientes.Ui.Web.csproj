@@ -4,4 +4,8 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\WebAppClientes.Infra.CrossCutting.Ioc\WebAppClientes.Infra.CrossCutting.Ioc.csproj" />
+  </ItemGroup>
+
 </Project>
