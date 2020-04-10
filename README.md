@@ -1,4 +1,4 @@
-# kubernetes-example-app
+# kubernetes-web-app-clientes
 🛳 Deploy da aplicação web-app-clientes via Kubernetes
 
 Arquivos para criação dos Services e Deployments para subir via Kubernetes a aplicação do repositório [web-app-clientes](https://github.com/rafaeldalsenter/web-app-clientes). Para testes foi utilizado o [Minikube](https://kubernetes.io/docs/tasks/tools/install-minikube/)
