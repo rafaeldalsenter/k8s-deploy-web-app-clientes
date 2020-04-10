@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: statefulset-postgres
+spec:
+  selector:
+    matchLabels:
+      name: postgres
+  serviceName: db-postgres
+  template:
+    metadata:
+      labels:
+        name: postgres
+    spec:
+      containers:
+        - name: container-postgres
+          image: postgres
+          env:
+            - name: POSTGRES_PASSWORD
+              value: "postgres"
+          ports:
+            - containerPort: 5432
+          volumeMounts:
+            - name: volume-postgres
+              mountPath: /var/lib/postgres
+      volumes:
+        - name: volume-postgres
+          persistentVolumeClaim:
+            claimName: configuracao-db

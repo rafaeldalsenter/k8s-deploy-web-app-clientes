@@ -1,18 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: aplicacao-deploy
+  name: app-deploy
 spec:
   selector:
     matchLabels:
-      app: aplicacao-pod
+      app: app-pod
   template:
     metadata:
       labels:
-        app: aplicacao-pod
+        app: app-pod
     spec:
-        containers:
-          - name: container-aplicacao-loja
-            image: rafanercessian/aplicacao-loja:v1
-            ports:
-              - containerPort: 80
+      containers:
+        - name: app
+          image: rafaeldalsenter/web-app-cliente
+          ports:
+            - containerPort: 80
+          env:
+            - name: POSTGRE_CONNECTIONSTRING
+              value: "Host=db-postgres;Port=5432;Database=postgres;User ID=postgres;Password=postgres"
+            - name: MONGODB_CONNECTIONSTRING
+              value: "mongodb://root:root@db-mongo:27017"

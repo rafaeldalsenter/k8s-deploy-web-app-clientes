@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: statefulset-mongo
+spec:
+  selector:
+    matchLabels:
+      name: mongo
+  serviceName: db-mongo
+  template:
+    metadata:
+      labels:
+        name: mongo
+    spec:
+      containers:
+        - name: container-mongo
+          image: mongo
+          env:
+            - name: MONGO_INITDB_ROOT_USERNAME
+              value: "root"
+            - name: MONGO_INITDB_ROOT_PASSWORD
+              value: "root"
+          ports:
+            - containerPort: 27017
+          volumeMounts:
+            - name: volume-mongo
+              mountPath: /var/lib/mongo
+      volumes:
+        - name: volume-mongo
+          persistentVolumeClaim:
+            claimName: configuracao-db
