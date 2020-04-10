@@ -26,4 +26,4 @@ Para subir o ambiente, basta rodar os comandos:
   kubectl create services.yaml
   ```
   
-Após isso, rodar o comando `minikube service service-app --url` para obter o link da aplicação. Por padrão ele subirá somente um Pod da aplicação, porém via Dashboard (rodando o comando `minikube dashboard`) você consegue escalonar quando Pods quiser :) 
+Após isso, rodar o comando `minikube service service-app --url` para obter o link da aplicação. Por padrão ele subirá somente um Pod da aplicação, porém via Dashboard (rodando o comando `minikube dashboard`) você consegue escalonar quando Pods da aplicação quiser, o service de LoadBalance fará o controle de tráfego entre os Pods :) 
